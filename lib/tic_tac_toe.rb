@@ -61,5 +61,22 @@ class TicTacToe
 
   def over?
     won? || full?
-  
+  end
+
+  def winner
+    res = won?
+    res ? @board[res[0]] : res
+  end
+
+  def play
+    until over?
+      turn
+    end
+    if won?
+      puts "Congrulations #{winner}!"
+    else
+      puts "Cat's Game!"
+    end
+  end
+
 end
