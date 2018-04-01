@@ -36,12 +36,16 @@ class TicTacToe
       input = gets.strip
       index = input_to_index(input)
     end
-    move(index)
+    move(index, current_player)
     display_board
   end
 
   def turn_count
     @board.count { |token| token != " " }
+  end
+
+  def current_player
+    turn_count.even? ? "X" : "O"
   end
 
   def won?
