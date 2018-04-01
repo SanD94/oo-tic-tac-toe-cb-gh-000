@@ -49,5 +49,10 @@ class TicTacToe
       position_taken(combination[0]) &&
       combination.all? { |val| val == combination[0] }
     end
+  end
 
+  def full?
+    turn_count == 9
+  end
+  
 end
