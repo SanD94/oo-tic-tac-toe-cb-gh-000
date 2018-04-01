@@ -34,8 +34,7 @@ class TicTacToe
   end
 
   def turn
-    input = gets.strip
-    index = input_to_index(input)
+    index = -1
     until valid_move?(index)
       input = gets.strip
       index = input_to_index(input)
