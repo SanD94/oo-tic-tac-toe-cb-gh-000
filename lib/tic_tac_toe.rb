@@ -40,4 +40,14 @@ class TicTacToe
     display_board
   end
 
+  def turn_count
+    @board.count { |token| token != " " }
+  end
+
+  def won?
+    WIN_COMBINATIONS.detect do |combination|
+      position_taken(combination[0]) &&
+      combination.all? { |val| val == combination[0] }
+    end
+
 end
